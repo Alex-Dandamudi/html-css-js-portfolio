@@ -29,6 +29,10 @@ nav, .nav-links{
 .logo{
     font-style: bold;
 }
+.logo:hover{
+    text-decoration: none;
+}
+
 nav{
     justify-content: space-around;
     align-items: center;
@@ -86,12 +90,15 @@ a:hover{
 .menu-links{
     position: absolute;
     top:100%;
-    right:0%;
+    left:0%;
     background-color: white;
     width: fit-content;
     max-height: 0;
     overflow: hidden;
     transition: all;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
 .menu-links a{
@@ -202,6 +209,11 @@ section{
     margin-top: 1rem;
     cursor: pointer;
     height: 2rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+.icon:hover{
+    transform: scale(1.1); /* Slight bulge */
 }
 
 /* buttuns */
@@ -247,4 +259,8 @@ section{
 
 .btn-container{
     gap: 1rem;
+}
+
+#.socials-container:hover{
+
 }

@@ -1,8 +1,18 @@
-@media screen and (max-width:1200px){
+@media screen and (max-width:960px){
     #desktop-nav{
         display: none;
     }
     #hamburger-nav{
         display: flex;
+    }
+    #logo{
+        display: flex;
+    }
+}
+@media screen and (max-width:780px){
+    #profile{
+        display: inline-block;
+    }
+    #section_text{
     }
 }
