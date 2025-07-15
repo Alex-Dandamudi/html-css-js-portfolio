@@ -43,6 +43,7 @@ nav{
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
+    font-weight: 500;
 }
 a{
     color: black;
@@ -117,6 +118,7 @@ a:hover{
 }
 .menu-links.open{
     max-height: 300px;
+    font-weight: 500;
 }
 
 .hamburger-icon.open span:first-child{
@@ -163,7 +165,7 @@ section{
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 80vh;
+    height: 60vh;
 }
 
 .section_pic-container{
@@ -206,11 +208,14 @@ section{
     margin-top: 1rem;
     cursor: pointer;
     height: 2rem;
+    border-radius: 200%;
+    border-color: black;
     display: inline-block;
     transition: transform 0.2s ease;
 }
 .icon:hover{
-    transform: scale(1.1); /* Slight bulge */
+    transform: scale(1.25); /* Slight bulge */
+    box-shadow: 2px 2px 2px #4b4d4e85, -2px 2px 2px #a79ea884
 }
 
 /* buttuns */
@@ -262,4 +267,71 @@ section{
 
 .section_pic-container{
     box-shadow: 15px 0 10px #97c8657d, -15px 0 10px #a3b18584 
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.logos-slide img{
+    height: 80px;
+    margin:0 40px;
+
+}
+
+.logos-slide{
+    display: inline-block;
+    animation: 20s slide infinite linear;
+}
+
+.logos{
+    overflow: hidden;
+    padding:50px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0),white);
+    content: "";
+    z-index: 2;
+}
+.logos:before, .logos:after{
+    position: absolute;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    content: "";
+    z-index: 2
+}
+
+.logos:before{
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0),white);
+}
+
+.logos:after{
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0),white);
+}
+
+.logos:hover .logos-slide{
+    animation-play-state: paused;
+}
+
+.skills-heading{
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    font-size: 1.5rem;
 }
