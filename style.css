@@ -28,6 +28,7 @@ nav, .nav-links{
 }
 .logo{
     font-style: bold;
+    font-size: 3rem;
 }
 .logo:hover{
     text-decoration: none;
@@ -168,6 +169,7 @@ section{
 .section_pic-container{
     display: flex;
     height: 400px;
+    border-radius: 200px;
     width: 400px;
     margin: auto 0;
 
@@ -189,11 +191,6 @@ section{
 .section_text_p2{
     font-size: 1.75rem;
     margin-bottom: 1rem;
-}
-
-.title{
-    font-size: 3rem;
-    text-align: center;
 }
 
 #socials-container{
@@ -247,10 +244,12 @@ section{
 
 .btn-color-1:hover{
     background: rgb(0, 0, 0);
+    box-shadow: 8px 0 8px #008cff85, -6px 0 8px #e100ff84 
 }
 
 .btn-color-2:hover{
     background: black;
+    box-shadow: 8px 0 8px #008cff85, -6px 0 8px #e100ff84 
 }
 
 .btn-color-2:hover{
@@ -261,6 +260,6 @@ section{
     gap: 1rem;
 }
 
-#.socials-container:hover{
-
+.section_pic-container{
+    box-shadow: 15px 0 10px #97c8657d, -15px 0 10px #a3b18584 
 }

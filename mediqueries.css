@@ -16,3 +16,29 @@
     #section_text{
     }
 }
+
+@keyframes slideInLeft{
+    from{
+        transform: translateX(600px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInTop{
+    from{
+        transform: translateY(400px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.title{
+    font-size: 3rem;
+    animation: slideInLeft 0.5s ease-in;
+}
+.icon{
+    animation: slideInTop 0.5s ease-in;
+}
