@@ -5,15 +5,50 @@
     #hamburger-nav{
         display: flex;
     }
-    #logo{
-        display: flex;
+    #profile,.section-container{
+        display: block;
+    }
+    section,.section-container{
+        height:fit-content;
+    }
+    section{
+        margin: 0 5%;
+    }
+    .section_pic-container{
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+    .logos::before,.logos::after{
+        display: none;
+}
+
+@media screen and (max-width:600px){
+    #profile{
+        height: 83vh;
+        margin-bottom: 0;
+    }
+    .logo{
+        font-size: 1.5rem;
+    }
+    .logos::before,.logos::after{
+        display: none;
+    }
+    .menu-links a{
+        font-size: 1rem;
     }
 }
-@media screen and (max-width:780px){
+
+@media screen and (max-width:1400px){
     #profile{
-        display: inline-block;
+        height:83vh;
+        margin-bottom: 2rem;
     }
-    #section_text{
+    #desktop-nav{
+        display: none;
+    }
+    #hamburger-nav{
+        display: flex;
     }
 }
 
