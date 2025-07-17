@@ -86,16 +86,6 @@ a:hover{
     position: relative;
     display: inline-block;
 }
-.menu-links.open{
-    position: fixed;
-    left: 11.5vh;
-    z-index: 1500;
-    background: transparent;
-    backdrop-filter: blur(3px);
-    border: 1px solid white;
-    border-top: none;
-    transition: all 1 ease;
-}
 .hamburger-icon{
     display: flex;
     flex-direction: column;
@@ -111,26 +101,6 @@ a:hover{
     background-color: black;
     transition: all 0.3 ease-in-out;
 }
-
-.menu-links{
-    top: 12.5vh;
-    left: 11.5vh;
-    position: fixed;
-    z-index: 1500;
-    width: 50%;
-    max-height: 0;
-    overflow: hidden;
-    background: transparent;
-    backdrop-filter: blur(3px);
-    border: 1px solid white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top: none;
-    transition: all;
-    overflow: hidden;
-    transition: max-height .8s ease;
-}
-
 .menu-links a{
     display: block;
     padding: 10px;

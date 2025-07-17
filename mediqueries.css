@@ -1,3 +1,8 @@
+@media (min-width: 1200px) {
+    .menu-links{
+      display: none;
+    }
+  }
 @media screen and (max-width:1200px)
 {
     #desktop-nav{
@@ -22,6 +27,34 @@
     }
     .logos::before,.logos::after{
         display: none;
+    }
+    .menu-links{
+        top: 12.85vh;
+        left: 11.5vh;
+        position: fixed;
+        z-index: 1500;
+        width: 50%;
+        max-height: 0;
+        overflow: hidden;
+        background: transparent;
+        backdrop-filter: blur(3px);
+        border: 1px solid white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top: none;
+        transition: all;
+        overflow: hidden;
+        transition: max-height .8s ease;
+    }
+    .menu-links.open{
+        position: fixed;
+        left: 11.5vh;
+        z-index: 1500;
+        background: transparent;
+        backdrop-filter: blur(3px);
+        border: 1px solid white;
+        border-top: none;
+        transition: all 1 ease;
     }
     nav
     {
@@ -64,6 +97,24 @@
     .menu-links a{
         font-size: 1rem;
     }
+    .menu-links{
+        top: 12.85vh;
+        left: 11.5vh;
+        position: fixed;
+        z-index: 1500;
+        width: 50%;
+        max-height: 0;
+        overflow: hidden;
+        background: transparent;
+        backdrop-filter: blur(3px);
+        border: 1px solid white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top: none;
+        transition: all;
+        overflow: hidden;
+        transition: max-height .8s ease;
+    }
 }
 
 @media screen and (max-width:1400px)
@@ -71,5 +122,30 @@
     #profile{
         height:83vh;
         margin-bottom: 2rem;
+    }
+}
+@media only screen and (width: 390px){
+    .menu-links{
+        top: 12.5vh;
+    }
+  }
+@media only screen and (width: 430px){
+    .menu-links{
+        top: 12.25vh;
+    }
+}
+@media only screen and (width: 414px){
+    .menu-links{
+        top: 12.35vh;
+    }
+}
+@media only screen and (width: 375px){
+    .menu-links{
+        top: 13.12vh;
+    }
+}
+@media only screen and (width: 412px){
+    .menu-links{
+        top: 12.3vh;
     }
 }
