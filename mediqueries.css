@@ -2,7 +2,14 @@
     .menu-links{
       display: none;
     }
-  }
+    .skills-heading{
+        padding-top: 5vh;
+    }
+    .project-grid{
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+}
 @media screen and (max-width:1200px)
 {
     #desktop-nav{
@@ -81,6 +88,10 @@
     #profile{
         padding-top: 16vh;
     }
+    .project-grid{
+        flex-wrap: wrap;
+        padding-top: 8vh;
+    }
 }
 
 @media screen and (max-width:600px)
@@ -98,6 +109,14 @@
     .menu-links a{
         font-size: 1rem;
     }
+    #about{
+        padding-top: 5vh;
+    }
+    .about-para{
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align:center;
+    }
 }
 
 @media screen and (max-width:1400px)
@@ -107,6 +126,50 @@
         margin-bottom: 2rem;
     }
 }
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+
+}
+
+#about{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes appear-projects{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
+#projects{
+    animation: appear-projects linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+
+
+
+
+
+
+
 
 /*
 @media only screen and (width: 390px){
