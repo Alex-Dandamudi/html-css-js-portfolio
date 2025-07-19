@@ -37,8 +37,9 @@
     }
     .menu-links{
         top: 0;
-        left: 0;
-        right: 0;
+        left:0;
+        right:0;
+        font-weight: 800;
         position: fixed;
         overflow: hidden;
         z-index: 1500;
@@ -47,13 +48,14 @@
         max-height: 0;
         background: transparent;
         backdrop-filter: blur(4px);
-        border-bottom: 1px solid white;
-        transition: all;
+        border: 1px solid white;
+        box-shadow: -10px 7px 10px rgba(0,0,0,0.1);
         transition: max-height .5s ease;
     }
 
     #hamburger-nav
     {
+        position: relative;
         top: 0;
         right: 0;
         left: 0;
@@ -106,6 +108,12 @@
         padding-left: 10px;
         padding-right: 10px;
         text-align:justify;
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .section_text_p2{
+        font-size: 1.5rem;
     }
 }
 

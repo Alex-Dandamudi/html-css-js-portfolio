@@ -43,13 +43,14 @@ nav{
     position: fixed;
     top: 0;
     width: 97%;
-    z-index: 1000;
+    z-index: 1500;
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10px; 
     background: transparent;
     backdrop-filter: blur(4px);
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.1);
     border: 1px solid white;
 }
 .nav-links{
@@ -173,7 +174,6 @@ section{
     border-radius: 200px;
     width: 400px;
     margin: auto 0;
-
 }
 
 .section_text{
