@@ -378,15 +378,15 @@ section{
 }
 
 #about{
-    padding-top: 10vh;
+    padding-top: 5vh;
 }
 
 .logos{
-    padding: 4vh;
+    padding: 5vh;
 }
 
 .AboutPara{
-    padding-top: 2vh;
+    padding-top: 5vh;
     text-align: justify;
     font-size: 1rem;
     font-weight: 600;

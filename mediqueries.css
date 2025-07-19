@@ -6,7 +6,7 @@
         padding-top: 5vh;
     }
     .project-grid{
-        padding-top: 10vh;
+        padding-top: 5vh;
         padding-bottom: 10vh;
     }
 }
@@ -37,50 +37,56 @@
     }
     .menu-links{
         top: 0;
-        left: 11.5vh;
+        left: 0;
+        right: 0;
         position: fixed;
         z-index: 1500;
-        margin-top: 12.85vh;
-        width: 50%;
+        margin-top: 10vh;
+        width: 100%;
         max-height: 0;
-        overflow: hidden;
         background: transparent;
         backdrop-filter: blur(3px);
         border: 1px solid white;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
         border-top: none;
         transition: all;
         overflow: hidden;
-        transition: max-height .8s ease;
+        transition: max-height .8s ease-in;
     }
     .menu-links.open{
+        top: 0;
+        left: 0;
+        right: 0;
         position: fixed;
-        left: 11.5vh;
         z-index: 1500;
+        margin-top: 10vh;
+        width: 100%;
         background: transparent;
         backdrop-filter: blur(3px);
         border: 1px solid white;
+        border-left: none;
+        border-right: none;
         border-top: none;
         transition: all 1 ease;
     }
-    nav
+    #hamburger-nav
     {
         top: 0;
         right: 0;
         left: 0;
+        padding: 0;
         margin: 0;
         position: fixed;
-        width: 90%;
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 30px;
-        border-radius: 10px; 
+        width: 100%;
+        border-radius: 0; 
         z-index: 1500;
         background: transparent;
         backdrop-filter: blur(3px);
-        border: 1px solid white;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        border-top: none;
         height: 10vh;
+
     }
     .logo{
         padding: 0;
