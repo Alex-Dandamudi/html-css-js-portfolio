@@ -48,7 +48,8 @@
         max-height: 0;
         background: transparent;
         backdrop-filter: blur(4px);
-        border: 1px solid white;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
         box-shadow: -10px 7px 10px rgba(0,0,0,0.1);
         transition: max-height .5s ease;
     }
@@ -67,6 +68,7 @@
         z-index: 1500;
         background: transparent;
         backdrop-filter: blur(4px);
+        box-shadow: -10px 0 10px rgba(0,0,0,0.1);
         border-bottom: none;
         border-left: none;
         border-right: none;
