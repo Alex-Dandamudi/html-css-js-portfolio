@@ -260,7 +260,7 @@ section{
 }
 
 .btn-color-1,.btn-color-2{
-    border: rgb(53, 53, 53) 0.1rem solid;
+    border: #353535 0.1rem solid;
 }
 
 .btn-color-1:hover,.btn-color-2:hover{
@@ -422,4 +422,90 @@ section{
     text-align: center;
     justify-content: center;
     gap:2rem;
+}
+
+h2{
+    text-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+}
+
+.nav-links{
+    text-shadow: -6px 5px 6px rgba(0, 0, 0, 0.189);
+}
+.hrv-project-card,.pothole-project-card,.web-project-card{
+    transition: transform 0.3s ease;
+}
+.hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover{
+    transform: scale(1.1); /* Slight bulge */
+}
+
+.HRV{
+    padding: 3vh;
+    height: fit-content;
+    align-items: center;
+    display:inline-block;
+    overflow: hidden;
+    overflow-wrap: wrap;
+}
+.HRV li{
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 5px;
+}
+
+.hrv-project-card,.pothole-project-card,.web-project-card{
+    border: 1px solid white;
+    border-radius: 30px;
+    width: 50vh;
+    background: transparent;
+    z-index: 1000;
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+}
+
+.HRV h3{
+    font-size: 1.5rem;
+    background: #780206;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 1000;
+}
+.HRV p{
+    font-size: 0.8rem;
+    padding: .3rem;
+    font-weight: 500;
+}
+.HRV-points{
+    padding-top: 1rem;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.HRV-links{
+    padding-top: 20px;
+}
+
+.HRVtech{
+    padding: 10px;
+}
+
+.HRVtech li{
+    list-style: none;
+    border: 1px solid white;
+}
+
+.HRV-git-icon{
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 200%;
+    border-color: black;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+    
+}
+.HRV-git-icon:hover{
+    transform: scale(1.25); /* Slight bulge */
+    box-shadow: 2px 2px 2px #4b4d4e85, -2px 2px 2px #a79ea884
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
 }

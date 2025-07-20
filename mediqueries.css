@@ -25,7 +25,7 @@
         height:fit-content;
     }
     section{
-        margin: 0 5%;
+        margin: 0 0;
     }
     .section_pic-container{
         width: 275px;
@@ -89,10 +89,6 @@
 
 @media screen and (max-width:600px)
 {
-    #profile{
-        height: 83vh;
-        margin-bottom: 0;
-    }
     .logo{
         font-size: 1.5rem;
     }
@@ -117,13 +113,35 @@
     .section_text_p2{
         font-size: 1.5rem;
     }
+    .project-grid{
+        padding-top: 5vh;
+        animation: none !important;
+    }
+    #about{
+        animation: appear-projects linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 10%;
+    }
+    .AboutPara{
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 10%;
+    }
+    #projects{
+        animation: appear-projects-2 linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 10%;
+    }
+    .project-grid{
+       
+    }
+
 }
 
 @media screen and (max-width:1400px)
 {
     #profile{
         height:83vh;
-        margin-bottom: 2rem;
     }
 }
 
