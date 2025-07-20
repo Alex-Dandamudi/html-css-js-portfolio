@@ -221,10 +221,8 @@ section{
 
 .title{
     font-size: 3rem;
-    animation: slideInLeft 0.5s ease-in;
 }
 .icon{
-    animation: slideInTop 0.5s ease-in;
 }
 
 /* Icons */
@@ -435,7 +433,9 @@ h2{
     transition: transform 0.3s ease;
 }
 .hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover{
-    transform: scale(1.1); /* Slight bulge */
+    transform: scale(1.07); /* Slight bulge */
+     background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Subtle light grey fade */
+     transform: translateY(-6px);
 }
 
 .HRV{
@@ -444,7 +444,6 @@ h2{
     align-items: center;
     display:inline-block;
     overflow: hidden;
-    overflow-wrap: wrap;
 }
 .HRV li{
     text-align: center;
@@ -453,6 +452,7 @@ h2{
 }
 
 .hrv-project-card,.pothole-project-card,.web-project-card{
+    height: fit-content;
     border: 1px solid white;
     border-radius: 30px;
     width: 50vh;
@@ -479,10 +479,11 @@ h2{
     padding-top: 1rem;
     padding-left: 18px;
     padding-right: 18px;
+    font-weight: 500;
 }
 
 .HRV-links{
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .HRVtech{
@@ -509,3 +510,32 @@ h2{
     box-shadow: 2px 2px 2px #4b4d4e85, -2px 2px 2px #a79ea884
     box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
 }
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.tech-tile {
+    padding: 6px 12px;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #333;
+    text-shadow: -2px 3px 2px rgba(0, 0, 0, 0.15);;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    white-space: nowrap;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+
+.tech-tile:hover{
+    transform: scale(1.05);
+}
+  
+
