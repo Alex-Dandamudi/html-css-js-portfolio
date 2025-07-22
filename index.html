@@ -39,7 +39,9 @@
         <div class="section_text">
             <p class="section_text_p1">Hello, I'm</p>
             <h1 class="title">Alex Dandamudi</h1>
-            <p class="section_text_p2">Frontend Developer</p>
+            <div class="para-container">
+            <p class="section_text_p2"><span class="auto-type"></span></p>
+            </div>
             <div class="btn-color">
                 <button class="btn btn-color-2" onclick="window.open('./assets/Alex Dandamudi Resume.pdf')">
                     Download CV
@@ -137,7 +139,7 @@
                             <span class="tech-tile">Algorithm</span>
                           </div>
                          <div class="HRV-links">
-                            <img src="./assets/github.png" alt="My GitHub Profile" class="HRV-git-icon"onclick="location.href='https://github.com/Alex-Dandamudi'"/>
+                            <img src="./assets/github.png" alt="My GitHub Profile" class="HRV-git-icon"onclick="location.href='https://github.com/Alex-Dandamudi/Pothole-Detection'"/>
                         </div>
                     </div>
                 </div>
@@ -165,5 +167,14 @@
             </div>
     </section>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-type",{
+            strings: ["Frontend Developer", "ML Engineer", "Software Developer"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        })
+</script>
 </body>
 </html>

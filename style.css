@@ -189,9 +189,18 @@ section{
     text-align: center;
 }
 
+.para-container{
+    display: inline-block;
+}
 .section_text_p2{
     font-size: 1.75rem;
     margin-bottom: 1rem;
+}
+@keyframes typing{
+    from {width: 0}
+}
+@keyframes cursor{
+    50%{ border-color: transparent}
 }
 
 #socials-container{
@@ -362,6 +371,7 @@ section{
     background: linear-gradient(to right, #CB3066, #16BFFD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
     -webkit-background-clip: text;
     color: transparent;
+    border-right-color: black;
 }
 
 .about-title{
@@ -474,7 +484,6 @@ h2{
     font-weight: 500;
 }
 .HRV-points{
-    padding-top: 1rem;
     padding-left: 18px;
     padding-right: 18px;
     font-weight: 500;
@@ -539,5 +548,6 @@ h2{
 .tech-tile:hover{
     transform: scale(1.05);
 }
-  
+
+
 
