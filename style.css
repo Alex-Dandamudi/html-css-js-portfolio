@@ -66,7 +66,7 @@ a{
 }
 a:hover{
     color: grey;
-    text-decoration: underline;
+    
     text-underline-offset: 1rem;
     text-decoration-color: rgb(181, 181, 181);
 }
@@ -549,5 +549,74 @@ h2{
     transform: scale(1.05);
 }
 
+.education-title{
+    padding: 0;
+    text-align: center;
+    font-size: 2rem;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.university-name{
+    font-size: 1.35rem;
+    color: #061161;
+}
+.university{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56vh;
+    border: 1px solid white;
+    margin-left: 8vh;
+    margin-right: 8vh;
+    margin-top: 5vh;
+    padding: 1vh;
+    border-radius: 20px;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(4px);
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.1);
+    text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.129);
+
+}
+.uni-location{
+    font-weight: 500;
+}
+.university-degree{
+    font-weight: 600;
+}
+
+.uni,.uni-location{
+    height: fit-content;
+    width: fit-content;
+
+}
+
+#education{
+    padding-top: 10vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+.university{
+    animation:autoblur linear;
+    animation-timeline: view(75% 0%);
+}
 
 
+@keyframes autoblur {
+    0%{
+        filter: blur(10px);
+        opacity: 0;
+        scale: 0.5;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+    70%{
+        filter: blur(0px);
+    }   
+}
