@@ -461,7 +461,7 @@ h2{
 }
 
 .hrv-project-card,.pothole-project-card,.web-project-card{
-    height: fit-content;
+    
     border: 1px solid white;
     border-radius: 30px;
     width: 50vh;
@@ -559,11 +559,15 @@ h2{
     align-items: center;
 }
 
-.university-name{
+.university-name,.narayana-name{
     font-size: 1.35rem;
     color: #061161;
 }
-.university{
+.narayana-name{
+    font-size: 1.35rem;
+    color:#580104;
+}
+.university,.narayana{
     align-self: center;
     display: flex;
     align-items: center;
@@ -581,14 +585,14 @@ h2{
     text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.129);
 
 }
-.uni-location{
+.uni-location,.nara-location{
     font-weight: 500;
 }
-.university-degree{
+.university-degree,.narayana-degree{
     font-weight: 600;
 }
 
-.uni,.uni-location{
+.uni,.uni-location,.nara,.nara-location{
     height: fit-content;
     width: fit-content;
 
@@ -600,7 +604,7 @@ h2{
     margin-right: 10vh;
 }
 
-.university{
+.university,.narayana{
     animation:autoblur linear;
     animation-timeline: view(75% 0%);
 }
@@ -622,7 +626,7 @@ h2{
 }
 
 .footer{
-    padding: 2vh;
+    padding: 1vh;
     display: flex;
     font-size: .8rem;
     justify-content: center;
@@ -631,4 +635,11 @@ h2{
     z-index: 1000;
     backdrop-filter: blur(4px);
     font-weight: 500;
+    box-shadow: -5px -3px 5px rgba(0,0,0,0.1);
+}
+.uni,.nara{
+    padding-left: 1vh;
+}
+.uni-location,.nara-location{
+    padding-right: 1vh;
 }
