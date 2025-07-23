@@ -28,7 +28,7 @@ nav, .nav-links{
     display: flex;
 }
 .logo{
-    padding-right: 80vh;
+    padding-left: 5vh;
     font-style: bold;
     font-size: 3rem;
 }
@@ -37,7 +37,7 @@ nav, .nav-links{
 }
 
 nav{
-    justify-content: space-around;
+    justify-content: space-between;
     align-items:center;
     height: 10vh;
     position: fixed;
@@ -54,6 +54,7 @@ nav{
     border: 1px solid white;
 }
 .nav-links{
+    padding-right: 5vh;
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
@@ -566,8 +567,7 @@ h2{
     align-self: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 56vh;
+    justify-content: space-between;
     border: 1px solid white;
     margin-left: 8vh;
     margin-right: 8vh;
@@ -619,4 +619,16 @@ h2{
     70%{
         filter: blur(0px);
     }   
+}
+
+.footer{
+    padding: 2vh;
+    display: flex;
+    font-size: .8rem;
+    justify-content: center;
+    background: transparent;
+    border-top: 1px solid white;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    font-weight: 500;
 }
