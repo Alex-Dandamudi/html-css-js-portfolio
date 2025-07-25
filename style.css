@@ -425,9 +425,7 @@ section{
 
 .project-grid{
     display: flex;
-    overflow: hidden;
-    text-align: center;
-    justify-content: center;
+    justify-content: space-around;
     gap:2rem;
 }
 
@@ -438,10 +436,11 @@ h2{
 .nav-links{
     text-shadow: -6px 5px 6px rgba(0, 0, 0, 0.189);
 }
-.hrv-project-card,.pothole-project-card,.web-project-card{
+.hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
     transition: transform 0.3s ease;
+    text-align: center;
 }
-.hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover{
+.hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover,.intrusion-project-card:hover{
     transform: scale(1.07); /* Slight bulge */
      background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Subtle light grey fade */
      transform: translateY(-6px);
@@ -460,7 +459,7 @@ h2{
     padding: 5px;
 }
 
-.hrv-project-card,.pothole-project-card,.web-project-card{
+.hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
     
     border: 1px solid white;
     border-radius: 30px;
@@ -604,7 +603,7 @@ h2{
     margin-right: 10vh;
 }
 
-.university,.narayana{
+.university,.narayana,.about-title,.education-title,.projects-title{
     animation:autoblur linear;
     animation-timeline: view(75% 0%);
 }
