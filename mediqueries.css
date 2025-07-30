@@ -223,11 +223,11 @@
 }
 
 
-.project-grid{
+/*.project-grid{
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 30%;
-}
+}*/
 
 .pothole-project-card h3{
     font-size: 1.45rem;
