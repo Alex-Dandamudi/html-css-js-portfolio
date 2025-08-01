@@ -149,7 +149,7 @@
         animation-timeline: view();
         animation-range: entry 0% cover 10%;
     }
-    .hrv-project-card,.pothole-project-card,.web-project-card{
+    .hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
         width: 40vh;
     }
     .university{
@@ -169,6 +169,9 @@
     }
     .university-degree{
         font-size: 0.7rem;
+    }
+    #projects{
+        padding-bottom: 5vh;
     }
 
 }
