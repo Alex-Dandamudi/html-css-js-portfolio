@@ -152,6 +152,12 @@
     .hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
         width: 40vh;
     }
+
+    .hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover,.intrusion-project-card:hover{
+        transform: scale(1.03); /* Slight bulge */
+         background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Subtle light grey fade */
+         transition: transform .5s ease;
+    }
     .university{
         justify-content: center;
         align-self: center;
