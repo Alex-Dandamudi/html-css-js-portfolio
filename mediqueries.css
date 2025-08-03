@@ -116,6 +116,11 @@
 
 @media screen and (max-width:600px)
 {
+    .footer{
+        font-size: 0.5rem;
+        padding: 5px;
+    }
+
     .logo{
         font-size: 1.5rem;
     }

@@ -442,6 +442,7 @@ h2{
 }
 
 .hidden-content1,.hidden-content2,.hidden-content3,.hidden-content4{
+    max-height: fit-content;
     display: none;
     transition: transform .3s ease;
 }
@@ -456,6 +457,7 @@ h2{
 .hrv-project-card:hover{
     .hidden-content1{
         display: block;
+        transition:max-height .3s ease;
     }
 }
 
