@@ -100,13 +100,18 @@
         padding-top: 16vh;
     }
     .project-grid{
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 100%;
+        margin: 0 20px;
     }
     .skills-heading{
         padding: 5vh;
     }
     .project-grid{
         padding-top: 5vh;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
     .AboutPara{
         margin-left: 5vh;
@@ -148,6 +153,10 @@
     .project-grid{
         padding-top: 5vh;
         animation: none !important;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 100%;
+        margin: 0 10px;
     }
     .AboutPara{
         animation: appear linear;
@@ -155,13 +164,26 @@
         animation-range: entry 0% cover 10%;
     }
     .hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
-        width: 40vh;
+        width: 100%;
+        max-width: 350px;
+        min-height: 180px;
     }
 
     .hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover,.intrusion-project-card:hover{
-        transform: scale(1.03); /* Slight bulge */
-         background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Subtle light grey fade */
-         transition: transform .5s ease;
+        transform: scale(1.02);
+        background: linear-gradient(135deg, #fdfbfb, #ebedee);
+        box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.15);
+        transition: all 0.5s ease;
+        z-index: 2000;
+    }
+
+    .hrv-project-card:hover .hidden-content1,
+    .pothole-project-card:hover .hidden-content2,
+    .web-project-card:hover .hidden-content3,
+    .intrusion-project-card:hover .hidden-content4{
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(-50%) scale(1.02);
     }
     .university{
         justify-content: center;
