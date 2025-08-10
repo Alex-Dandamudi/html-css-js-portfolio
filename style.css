@@ -22,6 +22,81 @@ a, .btn{
    transition: all 300ms ease;
 }
 
+/* BROWSER COMPATIBILITY AND ANIMATION FALLBACKS */
+@supports not (transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)) {
+    .hidden-content1, .hidden-content2, .hidden-content3, .hidden-content4 {
+        transition: all 0.4s ease;
+    }
+    
+    .hrv-project-card, .pothole-project-card, .web-project-card, .intrusion-project-card {
+        transition: all 0.4s ease;
+    }
+    
+    .HRV {
+        transition: all 0.4s ease;
+    }
+}
+
+/* SMOOTH SCROLLING FOR OLDER BROWSERS */
+@supports not (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* TOUCH DEVICE SUPPORT */
+@media (hover: none) and (pointer: coarse) {
+    .hrv-project-card:hover .hidden-content1,
+    .pothole-project-card:hover .hidden-content2,
+    .web-project-card:hover .hidden-content3,
+    .intrusion-project-card:hover .hidden-content4 {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.95);
+    }
+    
+    .hrv-project-card:active .hidden-content1,
+    .pothole-project-card:active .hidden-content2,
+    .web-project-card:active .hidden-content3,
+    .intrusion-project-card:active .hidden-content4 {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+    
+    .hrv-project-card:active .HRV-points,
+    .pothole-project-card:active .HRV-points,
+    .web-project-card:active .HRV-points,
+    .intrusion-project-card:active .HRV-points,
+    .hrv-project-card:active .tech-stack,
+    .pothole-project-card:active .tech-stack,
+    .web-project-card:active .tech-stack,
+    .intrusion-project-card:active .tech-stack,
+    .hrv-project-card:active .HRV-links,
+    .pothole-project-card:active .HRV-links,
+    .web-project-card:active .HRV-links,
+    .intrusion-project-card:active .HRV-links {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* REDUCED MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+    .hidden-content1, .hidden-content2, .hidden-content3, .hidden-content4,
+    .hrv-project-card, .pothole-project-card, .web-project-card, .intrusion-project-card,
+    .HRV, .HRV-points, .tech-stack, .HRV-links {
+        transition: none;
+        animation: none;
+    }
+    
+    .hidden-content1, .hidden-content2, .hidden-content3, .hidden-content4 {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
 /* DESKTOP NAV */
 
 nav, .nav-links{
@@ -429,15 +504,42 @@ section{
 .project-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 2rem 3rem;
+    gap: 3rem;
+    padding: 3rem;
     align-items: start;
     justify-items: center;
     position: relative;
     isolation: isolate;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    row-gap: 2rem;
+    row-gap: 3rem;
+}
+
+/* RESPONSIVE PROJECT GRID */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .hidden-content1, .hidden-content2, .hidden-content3, .hidden-content4 {
+        padding: 1.5rem;
+    }
+    
+    .HRV-points li {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .tech-stack {
+        gap: 6px;
+    }
+    
+    .tech-tile {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
 }
 
 h2{
@@ -455,51 +557,69 @@ h2{
 
 .hidden-content1,.hidden-content2,.hidden-content3,.hidden-content4{
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
     border-radius: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.6s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.3) translateY(50px);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 1500;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    will-change: transform, opacity, visibility;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-origin: center center;
+    min-height: 500px;
+    max-height: 650px;
+    overflow: visible;
 }
 
 .hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover,.intrusion-project-card:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
     box-shadow: -15px 15px 20px rgba(0, 0, 0, 0.2);
     z-index: 2000;
     position: relative;
     border-radius: 30px;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .hrv-project-card:hover .hidden-content1{
-    max-height: 600px;
     opacity: 1;
-    transform: translateY(-50%) scale(1.05);
+    visibility: visible;
+    transform: scale(1.05) translateY(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .pothole-project-card:hover .hidden-content2{
-    max-height: 600px;
     opacity: 1;
-    transform: translateY(-50%) scale(1.05);
+    visibility: visible;
+    transform: scale(1.05) translateY(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .web-project-card:hover .hidden-content3{
-    max-height: 600px;
     opacity: 1;
-    transform: translateY(-50%) scale(1.05);
+    visibility: visible;
+    transform: scale(1.05) translateY(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .intrusion-project-card:hover .hidden-content4{
-    max-height: 600px;
     opacity: 1;
-    transform: translateY(-50%) scale(1.05);
+    visibility: visible;
+    transform: scale(1.05) translateY(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .HRV{
@@ -510,16 +630,19 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: visible;
-    transition: all 0.6s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1001;
+    text-align: center;
 }
 .HRV li{
     text-align: center;
-    font-size: 0.9rem;
-    padding: 5px;
+    font-size: 0.85rem;
+    padding: 4px;
     transition: transform .3s ease;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 .hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
@@ -531,14 +654,30 @@ h2{
     background: transparent;
     z-index: 1000;
     box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     position: relative;
     justify-self: center;
     display: flex;
     align-items: center;
-    transition: all 0.6s ease;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform-origin: center;
+    overflow: visible;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    animation: cardEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .HRV h3{
@@ -560,17 +699,89 @@ h2{
     text-align: center;
 }
 .HRV-points{
-    padding-left: 18px;
-    padding-right: 18px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ANIMATE CONTENT INSIDE HIDDEN SECTIONS */
+.hidden-content1 .HRV-points,
+.hidden-content2 .HRV-points,
+.hidden-content3 .HRV-points,
+.hidden-content4 .HRV-points {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.hrv-project-card:hover .HRV-points,
+.pothole-project-card:hover .HRV-points,
+.web-project-card:hover .HRV-points,
+.intrusion-project-card:hover .HRV-points {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.hidden-content1 .tech-stack,
+.hidden-content2 .tech-stack,
+.hidden-content3 .tech-stack,
+.hidden-content4 .tech-stack {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.hrv-project-card:hover .tech-stack,
+.pothole-project-card:hover .tech-stack,
+.web-project-card:hover .tech-stack,
+.intrusion-project-card:hover .tech-stack {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.hidden-content1 .HRV-links,
+.hidden-content2 .HRV-links,
+.hidden-content3 .HRV-links,
+.hidden-content4 .HRV-links {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+.hrv-project-card:hover .HRV-links,
+.pothole-project-card:hover .HRV-links,
+.web-project-card:hover .HRV-links,
+.intrusion-project-card:hover .HRV-links {
+    opacity: 1;
+    transform: scale(1) translateY(0);
 }
 
 .HRV-links{
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 .HRVtech{
@@ -600,18 +811,18 @@ h2{
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    padding: 0 10px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    padding: 0 8px;
 }
   
 .tech-tile {
-    padding: 6px 12px;
+    padding: 5px 10px;
     background-color: transparent;
-    border-radius: 10px;
-    font-size: 14px;
+    border-radius: 8px;
+    font-size: 13px;
     font-weight: 800;
     color: #333;
     background: #780206;  /* fallback for old browsers */
