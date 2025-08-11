@@ -475,7 +475,6 @@ section{
 }
 #projects{
     padding-top: 10vh;
-    padding-bottom: 10vh;
     margin: 0;
     min-height: fit-content;
     position: relative;
@@ -608,18 +607,54 @@ h2{
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-.web-project-card:hover .hidden-content3{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.05) translateY(0);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
 
-.intrusion-project-card:hover .hidden-content4{
+.web-project-card:hover .hidden-content3,
+.intrusion-project-card:hover .hidden-content4 {
+    position: absolute;
+    left: 0%;
+    top: auto;
+    bottom: 5%;
+    transform: translateX(0%) scale(1.05);
+    width: 100%;
+    max-width: 400px;
+    max-height: 60vh;
+    margin: 0;
+    z-index: 9999;
     opacity: 1;
     visibility: visible;
-    transform: scale(1.05) translateY(0);
+    overflow-y: auto;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+.hrv-project-card:hover .hidden-content1,
+.pothole-project-card:hover .hidden-content2{
+    position: absolute;
+    left: 0%;
+    top: auto;
+    top: 5%;
+    transform: translateX(0%) scale(1.05);
+    width: 100%;
+    max-width: 400px;
+    max-height: 60vh;
+    margin: 0;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1.5rem;
 }
 
 .HRV{
@@ -934,4 +969,34 @@ h2{
 }
 .uni-location,.nara-location{
     padding-right: 1vh;
+}
+
+@media (max-width: 768px) {
+  .hrv-project-card:hover .hidden-content1,
+  .pothole-project-card:hover .hidden-content2,
+  .web-project-card:hover .hidden-content3,
+  .intrusion-project-card:hover .hidden-content4 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: unset;
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    min-height: unset;
+    overflow: visible;
+    padding: 1rem;
+    transform: scale(1.01);
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
