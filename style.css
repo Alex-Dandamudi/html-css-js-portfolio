@@ -583,6 +583,21 @@ h2{
     overflow: visible;
 }
 
+.hidden-content3,.hidden-content4{
+    display: flex;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    overflow: visible;
+}
+.hidden-content1,.hidden-content2{
+    display: flex;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    overflow: visible;
+}
+
 .hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover,.intrusion-project-card:hover{
     transform: scale(1.02);
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
@@ -607,22 +622,27 @@ h2{
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
+.hidden-content1,.hidden-content2{
+    display: flex;
+    height: 10vh;
+}
+
 
 .web-project-card:hover .hidden-content3,
 .intrusion-project-card:hover .hidden-content4 {
     position: absolute;
     left: 0%;
     top: auto;
-    bottom: 5%;
+    bottom: -30%;
     transform: translateX(0%) scale(1.05);
     width: 100%;
     max-width: 400px;
-    max-height: 60vh;
+    height: auto;
     margin: 0;
     z-index: 9999;
     opacity: 1;
     visibility: visible;
-    overflow-y: auto;
+    overflow: visible;
     border-radius: 30px;
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -636,17 +656,17 @@ h2{
 .pothole-project-card:hover .hidden-content2{
     position: absolute;
     left: 0%;
-    top: auto;
-    top: 5%;
+    top: -10%;
+    bottom: auto;
     transform: translateX(0%) scale(1.05);
     width: 100%;
     max-width: 400px;
-    max-height: 60vh;
+    height: auto;
     margin: 0;
     z-index: 9999;
     opacity: 1;
     visibility: visible;
-    overflow-y: auto;
+    overflow: visible;
     border-radius: 30px;
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
