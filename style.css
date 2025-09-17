@@ -122,9 +122,9 @@ nav{
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    border-radius: 10px; 
-    background: transparent;
-    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    background: rgb(255, 255, 255, 50%);
+    backdrop-filter: blur(8px);
     box-shadow: -10px 10px 10px rgba(0,0,0,0.1);
     border: 1px solid white;
 }
@@ -341,7 +341,8 @@ section{
 }
 
 .btn-color-1,.btn-color-2{
-    border: #353535 0.1rem solid;
+    border: #000000 0.1rem solid;
+    background: transparent;
 }
 
 .btn-color-1:hover,.btn-color-2:hover{
@@ -349,7 +350,7 @@ section{
 }
 
 .btn-color-1,.btn-color-2:hover{
-    background: rgb(52, 52, 52);
+    background: rgb(0, 0, 0);
     color: white;
 }
 
@@ -1019,4 +1020,8 @@ h2{
     justify-content: flex-start;
     align-items: center;
   }
+}
+
+.hrv-project-card{
+    background: image("assets/low-heart-rate-variability-symptoms-jpg.webp");
 }
