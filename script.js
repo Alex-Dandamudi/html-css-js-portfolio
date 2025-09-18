@@ -220,3 +220,172 @@ function toggleMenu(){
         return symbol === 'X' ? 'O' : 'X';
     }
 })();
+
+
+// Mines Game
+(() => {
+    const boardContainer = document.querySelector('.mines-board');
+    if (!boardContainer) return;
+
+    const minesCountSelect = document.querySelector('#mines-count');
+    const startButton = document.querySelector('.mines-start');
+    const stopButton = document.querySelector('.mines-stop');
+    const resetButton = document.querySelector('.mines-reset');
+    const statusLabel = document.querySelector('.mines-status');
+    const scoreLabel = document.querySelector('.mines-score');
+
+    const GRID_SIZE = 16; // 4x4
+    let minesCount = Number(minesCountSelect ? minesCountSelect.value : 3);
+    let minesSet = new Set();
+    let revealedSafeCount = 0;
+    let score = 0;
+    let started = false;
+    let gameOver = false;
+
+    function updateScore(){
+        if (scoreLabel) scoreLabel.textContent = `Score: ${score}`;
+    }
+
+    function setStatus(msg){
+        if (statusLabel) statusLabel.textContent = msg;
+    }
+
+    function renderBoard(){
+        boardContainer.innerHTML = '';
+        for (let i = 0; i < GRID_SIZE; i++){
+            const cell = document.createElement('button');
+            cell.className = 'mines-cell';
+            cell.setAttribute('role', 'gridcell');
+            cell.setAttribute('aria-label', `Cell ${i + 1}`);
+            cell.dataset.index = String(i);
+            cell.addEventListener('click', onCellClick);
+            boardContainer.appendChild(cell);
+        }
+    }
+
+    function randomizeMines(){
+        minesSet.clear();
+        const total = Math.min(Math.max(1, minesCount), GRID_SIZE - 1);
+        while (minesSet.size < total){
+            minesSet.add(Math.floor(Math.random() * GRID_SIZE));
+        }
+    }
+
+    function onCellClick(e){
+        const cell = e.currentTarget;
+        if (!started || gameOver) return;
+        const idx = Number(cell.dataset.index);
+        if (cell.classList.contains('revealed')) return;
+
+        if (minesSet.has(idx)){
+            revealMine(cell);
+            revealAllMines();
+            gameOver = true;
+            started = false;
+            stopButton.disabled = true;
+            startButton.disabled = false;
+            setStatus('Boom! You hit a mine.');
+            return;
+        }
+        revealSafe(cell);
+        revealedSafeCount++;
+        score += 1; // +1 per safe pick
+        updateScore();
+        setStatus('Safe! Continue or press Stop.');
+
+        const totalSafes = GRID_SIZE - minesSet.size;
+        if (revealedSafeCount >= totalSafes){
+            gameOver = true;
+            started = false;
+            setStatus(`Perfect! Board cleared. Final Score: ${score}`);
+            stopButton.disabled = true;
+            startButton.disabled = false;
+        }
+    }
+
+    function revealMine(cell){
+        cell.classList.add('revealed', 'mine');
+        cell.textContent = '💣';
+    }
+
+    function revealSafe(cell){
+        cell.classList.add('revealed', 'safe');
+        cell.textContent = '✓';
+    }
+
+    function revealAllMines(){
+        const cells = Array.from(boardContainer.querySelectorAll('.mines-cell'));
+        for (const idx of minesSet){
+            const c = cells[idx];
+            if (!c.classList.contains('revealed')){
+                c.classList.add('revealed', 'mine');
+                c.textContent = '💣';
+            }
+        }
+    }
+
+    function resetGame(full = false){
+        revealedSafeCount = 0;
+        score = 0;
+        gameOver = false;
+        started = false;
+        if (minesCountSelect) minesCount = Number(minesCountSelect.value);
+        if (full){
+            randomizeMines();
+        } else {
+            minesSet.clear();
+        }
+        renderBoard();
+        updateScore();
+        stopButton.disabled = true;
+        startButton.disabled = false;
+        setStatus('Choose mines and press Start');
+    }
+
+    // Controls
+    if (minesCountSelect){
+        minesCountSelect.addEventListener('change', () => {
+            minesCount = Number(minesCountSelect.value);
+            resetGame(false);
+        });
+    }
+
+    if (startButton){
+        startButton.addEventListener('click', () => {
+            if (started && !gameOver) return;
+            revealedSafeCount = 0;
+            score = 0;
+            gameOver = false;
+            started = true;
+            randomizeMines();
+            renderBoard();
+            updateScore();
+            setStatus('Game started. Pick a safe tile.');
+            stopButton.disabled = false;
+            startButton.disabled = true;
+        });
+    }
+
+    if (stopButton){
+        stopButton.addEventListener('click', () => {
+            if (!started || gameOver) return;
+            setStatus(`Stopped. Final Score: ${score}`);
+            started = false;
+            gameOver = true;
+            stopButton.disabled = true;
+            startButton.disabled = false;
+            revealAllMines();
+        });
+    }
+
+    if (resetButton){
+        resetButton.addEventListener('click', () => {
+            resetGame(false);
+        });
+    }
+
+    // Initial
+    renderBoard();
+    updateScore();
+    setStatus('Choose mines and press Start');
+})();

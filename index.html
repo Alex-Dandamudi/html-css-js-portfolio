@@ -254,6 +254,35 @@
                 </div>
             </div>
         </div>
+                <div class="mines-project-card">
+                    <div class="HRV">
+                        <h3>Mines</h3>
+                        <p>Play in-browser</p>
+                        <div class="mines-container">
+                            <div class="mines-controls">
+                                <label for="mines-count">Mines:</label>
+                                <select id="mines-count" class="mines-count" aria-label="Select number of mines">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="8">8</option>
+                                    <option value="10">10</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <button type="button" class="mines-start">Start</button>
+                                <button type="button" class="mines-stop" disabled>Stop</button>
+                            </div>
+                            <div class="mines-meta">
+                                <span class="mines-status" aria-live="polite">Choose mines and press Start</span>
+                                <span class="mines-score" aria-label="Current score">Score: 0</span>
+                            </div>
+                            <div class="mines-board" role="grid" aria-label="Mines 4 by 4 Board"></div>
+                            <button type="button" class="mines-reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
             </div>
     </section>
     <footer class="footer">Copyright © 2025 alex dandamudi. All rights reserved.</footer>

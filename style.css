@@ -143,10 +143,19 @@ nav::before, nav::after{
 nav::before{
     background: radial-gradient(120px 40px at 20% 50%, rgba(255,255,255,0.35), transparent 60%),
                 radial-gradient(100px 60px at 80% 30%, rgba(255,255,255,0.20), transparent 60%),
-                radial-gradient(140px 60px at 60% 90%, rgba(255,255,255,0.18), transparent 60%);
+                radial-gradient(140px 60px at 60% 90%, rgba(255,255,255,0.18), transparent 60%),
+                /* moving shine band */
+                radial-gradient(160px 60px at var(--shine-x, -20%) 50%, rgba(255,255,255,0.35), rgba(255,255,255,0) 70%),
+                radial-gradient(220px 80px at calc(var(--shine-x, -20%) + 10%) 40%, rgba(255,255,255,0.18), rgba(255,255,255,0) 70%);
     mix-blend-mode: screen;
     opacity: 0.85;
-    animation: liquidGlow 12s ease-in-out infinite alternate;
+    animation: liquidGlow 12s ease-in-out infinite alternate, liquidShine 9s ease-in-out infinite;
+}
+
+@keyframes liquidShine{
+    0% { --shine-x: -20%; opacity: 0.8; }
+    50% { --shine-x: 120%; opacity: 0.95; }
+    100% { --shine-x: -20%; opacity: 0.8; }
 }
 
 nav::after{
@@ -1199,4 +1208,137 @@ h2{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+/* Mines game card styles */
+.mines-project-card{
+    border: 1px solid white;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    min-height: 200px;
+    background: transparent;
+    z-index: 1000;
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+    overflow: visible;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    animation: cardEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.mines-project-card:hover{
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    box-shadow: -15px 15px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    border-radius: 30px;
+}
+
+.mines-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.mines-controls{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mines-count{
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: transparent;
+    font-weight: 700;
+}
+
+.mines-start, .mines-stop, .mines-reset{
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.mines-start:hover, .mines-stop:hover, .mines-reset:hover{
+    transform: scale(1.04);
+    background: #000;
+    color: #fff;
+}
+
+.mines-stop:disabled{
+    opacity: 0.5;
+    cursor: default;
+}
+
+.mines-meta{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.mines-board{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.mines-cell{
+    aspect-ratio: 1 / 1;
+    border: 1px solid white;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #061161;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+    box-shadow: -4px 4px 6px rgba(0,0,0,0.12);
+}
+
+.mines-cell:hover{
+    transform: scale(1.03);
+    background: rgba(255,255,255,0.8);
+}
+
+.mines-cell.revealed{
+    cursor: default;
+    background: rgba(255,255,255,0.9);
+}
+
+.mines-cell.mine{
+    color: #780206;
+}
+
+.mines-cell.safe{
+    color: #061161;
+}
+
+@media (max-width: 768px) {
+    .mines-board{ max-width: 280px; }
 }
