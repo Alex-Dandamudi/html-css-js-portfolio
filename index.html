@@ -11,11 +11,14 @@
 <body>
     <nav id="desktop-nav">
        <div><h2 class="logo">Alex Dandamudi</h2></div>
-        <div>
+        <div class="nav-right">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
             </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle-icon">🌙</span>
+            </button>
         </div>
     </nav>
     <nav id="hamburger-nav">
@@ -31,6 +34,11 @@
     <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li class="mobile-theme-toggle">
+            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle-icon">🌙</span>
+            </button>
+        </li>
     </div>
     <section id="profile">
         <div class="section_pic-container">

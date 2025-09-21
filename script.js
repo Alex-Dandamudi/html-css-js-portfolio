@@ -5,6 +5,74 @@ function toggleMenu(){
     icon.classList.toggle("open");
 }
 
+// Dark Mode Toggle Functionality
+(function() {
+    // Get theme toggle buttons
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    
+    // Get theme icon elements
+    const themeIcon = document.querySelector('#theme-toggle .theme-toggle-icon');
+    const mobileThemeIcon = document.querySelector('#mobile-theme-toggle .theme-toggle-icon');
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Apply the saved theme on page load
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    // Theme toggle function
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Update theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+        
+        // Save to localStorage
+        localStorage.setItem('theme', newTheme);
+        
+        // Update icons
+        updateThemeIcon(newTheme);
+        
+        // Add a subtle animation effect
+        document.body.style.transition = 'all 0.3s ease';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 300);
+    }
+    
+    // Update theme icon based on current theme
+    function updateThemeIcon(theme) {
+        const icon = theme === 'light' ? '🌙' : '☀️';
+        if (themeIcon) themeIcon.textContent = icon;
+        if (mobileThemeIcon) mobileThemeIcon.textContent = icon;
+    }
+    
+    // Add event listeners
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addListener((e) => {
+            // Only auto-switch if user hasn't manually set a preference
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                updateThemeIcon(newTheme);
+            }
+        });
+    }
+})();
+
 // Tic Tac Toe
 (() => {
     const boardElement = document.querySelector('.ttt-board');
