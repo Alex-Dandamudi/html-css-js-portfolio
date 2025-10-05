@@ -34,6 +34,7 @@
     <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#games" onclick="toggleMenu()">Games</a></li>
         <li class="mobile-theme-toggle">
             <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
                 <span class="theme-toggle-icon">🌙</span>
@@ -71,30 +72,56 @@
             <h3 class="H3">Skills</h3>
         </div>
     </div>
-    <div class="logos">
-        <div class="logos-slide"> 
-            <img src="./assets/pngwing.com-11.png"/>
-            <img src="./assets/pngwing.com-12.png"/>
-            <img src="./assets/JavaScript-Logo-PNG-Symbol-for-Web-Development-Transparent.png"/>
-            <img src="./assets/Python-programming-code-coding-transparent-PNG-image.png"/>
-            <img src="./assets/[CITYPNG.COM]HD Java Logo Transparent Background - 2000x2000.png"/>
-            <img src="./assets/[CITYPNG.COM]HD MySQL Logo Transparent Background - 2000x2000.png"/>
-            <img src="./assets/toppng.com-github-wordmark-with-octocat-badge-1280x1156.png"/>
-            <img src="./assets/ms-excel-icon-main-logo-symbol-green-spreadsheet-software-flat-design.png"/>
-            <img src="./assets/pngwing.com-9.png"/>
-            <img src="./assets/pngwing.com-10.png"/>
+    <div class="skills-container">
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/pngwing.com-11.png" alt="HTML"/>
+            </div>
         </div>
-        <div class="logos-slide"> 
-            <img src="./assets/pngwing.com-11.png"/>
-            <img src="./assets/pngwing.com-12.png"/>
-            <img src="./assets/JavaScript-Logo-PNG-Symbol-for-Web-Development-Transparent.png"/>
-            <img src="./assets/Python-programming-code-coding-transparent-PNG-image.png"/>
-            <img src="./assets/[CITYPNG.COM]HD Java Logo Transparent Background - 2000x2000.png"/>
-            <img src="./assets/[CITYPNG.COM]HD MySQL Logo Transparent Background - 2000x2000.png"/>
-            <img src="./assets/toppng.com-github-wordmark-with-octocat-badge-1280x1156.png"/>
-            <img src="./assets/ms-excel-icon-main-logo-symbol-green-spreadsheet-software-flat-design.png"/>
-            <img src="./assets/pngwing.com-9.png"/>
-            <img src="./assets/pngwing.com-10.png"/>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/pngwing.com-12.png" alt="CSS"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/JavaScript-Logo-PNG-Symbol-for-Web-Development-Transparent.png" alt="JavaScript"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/Python-programming-code-coding-transparent-PNG-image.png" alt="Python"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/[CITYPNG.COM]HD Java Logo Transparent Background - 2000x2000.png" alt="Java"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/[CITYPNG.COM]HD MySQL Logo Transparent Background - 2000x2000.png" alt="MySQL"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/toppng.com-github-wordmark-with-octocat-badge-1280x1156.png" alt="GitHub"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/ms-excel-icon-main-logo-symbol-green-spreadsheet-software-flat-design.png" alt="Excel"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/pngwing.com-9.png" alt="React"/>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">
+                <img src="./assets/pngwing.com-10.png" alt="Node.js"/>
+            </div>
         </div>
     </div>
     <section id="about">
@@ -233,66 +260,22 @@
                     </div>
                     </div>
                 </div>
-                <div class="tictactoe-project-card">
-            <div class="HRV">
-                <h3>Tic Tac Toe</h3>
-                <p>Play in-browser</p>
-                <div class="ttt-container">
-                    <div class="ttt-controls">
-                        <label for="ttt-difficulty">Difficulty:</label>
-                        <select id="ttt-difficulty" class="ttt-difficulty" aria-label="Select difficulty">
-                            <option value="easy">Easy</option>
-                            <option value="medium">Medium</option>
-                            <option value="hard" selected>Hard</option>
-                        </select>
-                    </div>
-                    <div class="ttt-status" aria-live="polite">Player X's turn</div>
-                    <div class="ttt-board" role="grid" aria-label="Tic Tac Toe Board">
-                        <button class="ttt-cell" data-index="0" role="gridcell" aria-label="Cell 1"></button>
-                        <button class="ttt-cell" data-index="1" role="gridcell" aria-label="Cell 2"></button>
-                        <button class="ttt-cell" data-index="2" role="gridcell" aria-label="Cell 3"></button>
-                        <button class="ttt-cell" data-index="3" role="gridcell" aria-label="Cell 4"></button>
-                        <button class="ttt-cell" data-index="4" role="gridcell" aria-label="Cell 5"></button>
-                        <button class="ttt-cell" data-index="5" role="gridcell" aria-label="Cell 6"></button>
-                        <button class="ttt-cell" data-index="6" role="gridcell" aria-label="Cell 7"></button>
-                        <button class="ttt-cell" data-index="7" role="gridcell" aria-label="Cell 8"></button>
-                        <button class="ttt-cell" data-index="8" role="gridcell" aria-label="Cell 9"></button>
-                    </div>
-                    <button class="ttt-reset" type="button">Reset</button>
-                </div>
-            </div>
-        </div>
-                <div class="mines-project-card">
-                    <div class="HRV">
-                        <h3>Mines</h3>
-                        <p>Play in-browser</p>
-                        <div class="mines-container">
-                            <div class="mines-controls">
-                                <label for="mines-count">Mines:</label>
-                                <select id="mines-count" class="mines-count" aria-label="Select number of mines">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3" selected>3</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="8">8</option>
-                                    <option value="10">10</option>
-                                    <option value="12">12</option>
-                                </select>
-                                <button type="button" class="mines-start">Start</button>
-                                <button type="button" class="mines-stop" disabled>Stop</button>
-                            </div>
-                            <div class="mines-meta">
-                                <span class="mines-status" aria-live="polite">Choose mines and press Start</span>
-                                <span class="mines-score" aria-label="Current score">Score: 0</span>
-                            </div>
-                            <div class="mines-board" role="grid" aria-label="Mines 4 by 4 Board"></div>
-                            <button type="button" class="mines-reset">Reset</button>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section>
+    
+    <!-- Games Section -->
+    <section id="games">
+        <h5 class="games-title">Are you bored?</h5>
+        <div class="surprise-container">
+            <div class="surprise-text">
+                <p>Sometimes we all need a little break...</p>
+                <button class="surprise-button" id="surprise-button">
+                    <span class="surprise-text">Click here</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
     <footer class="footer">Copyright © 2025 alex dandamudi. All rights reserved.</footer>
     <script src="script.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>

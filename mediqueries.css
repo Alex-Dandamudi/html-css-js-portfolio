@@ -46,8 +46,22 @@
         height: 275px;
         margin: 0 auto 2rem;
     }
-    .logos::before,.logos::after{
-        display: none;
+    .skills-container {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 2rem 1rem;
+        max-width: 400px;
+        aspect-ratio: 2.5;
+    }
+    
+    .skill-card {
+        padding: 0.5rem;
+    }
+    
+    .skill-icon img {
+        width: 30px;
+        height: 30px;
     }
     .menu-links{
         top: 0;
@@ -129,8 +143,22 @@
     .logo{
         font-size: 1.5rem;
     }
-    .logos::before,.logos::after{
-        display: none;
+    .skills-container {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 2rem 1rem;
+        max-width: 400px;
+        aspect-ratio: 2.5;
+    }
+    
+    .skill-card {
+        padding: 0.5rem;
+    }
+    
+    .skill-icon img {
+        width: 30px;
+        height: 30px;
     }
     .menu-links a{
         font-size: 1rem;
@@ -300,4 +328,38 @@
     .menu-links{
         top: 12.3vh;
     }
-}*/
+}
+
+/* Games Page Responsive Styles */
+@media (max-width: 768px) {
+    .console-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .console-title h1 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .console-title p {
+        font-size: 0.9rem;
+    }
+    
+    .back-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .games-page-container {
+        padding: 1rem;
+    }
+    
+    .games-page-container .games-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+}

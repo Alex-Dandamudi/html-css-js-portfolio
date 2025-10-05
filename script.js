@@ -378,7 +378,7 @@ function toggleMenu(){
 
     function revealSafe(cell){
         cell.classList.add('revealed', 'safe');
-        cell.textContent = '✓';
+        cell.textContent = '⭐️';
     }
 
     function revealAllMines(){
@@ -456,4 +456,41 @@ function toggleMenu(){
     renderBoard();
     updateScore();
     setStatus('Choose mines and press Start');
+})();
+
+// Surprise Games Section
+(() => {
+    const surpriseButton = document.getElementById('surprise-button');
+    
+    if (!surpriseButton) return;
+    
+    function navigateToGames() {
+        // Add a subtle celebration effect
+        surpriseButton.style.transform = 'scale(1.1) rotate(5deg)';
+        setTimeout(() => {
+            surpriseButton.style.transform = '';
+        }, 300);
+        
+        // Update button text
+        const buttonText = surpriseButton.querySelector('.surprise-text');
+        const buttonEmoji = surpriseButton.querySelector('.surprise-emoji');
+        if (buttonText) buttonText.textContent = 'Loading...';
+        if (buttonEmoji) buttonEmoji.textContent = '🎮';
+        
+        // Navigate to games page after a short delay
+        setTimeout(() => {
+            window.location.href = 'games.html';
+        }, 500);
+    }
+    
+    surpriseButton.addEventListener('click', navigateToGames);
+    
+    // Add some hover effects for the surprise button
+    surpriseButton.addEventListener('mouseenter', () => {
+        surpriseButton.style.transform = 'scale(1.05) translateY(-2px)';
+    });
+    
+    surpriseButton.addEventListener('mouseleave', () => {
+        surpriseButton.style.transform = '';
+    });
 })();

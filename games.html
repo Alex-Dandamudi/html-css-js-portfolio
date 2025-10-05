@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-eqiv="X-UA-Compatible" content="IE-edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Games - Alex Dandamudi</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mediqueries.css"/>
+</head>
+<body>
+    <!-- Console Header -->
+    <div class="console-header">
+        <div class="console-title">
+            <h1>GAME CONSOLE</h1>
+            <p>Retro Gaming Experience</p>
+        </div>
+        <button class="back-button" onclick="goBack()">
+            <span>← BACK</span>
+        </button>
+    </div>
+
+    <!-- Games Container -->
+    <div class="games-page-container">
+        <div class="games-grid">
+            <div class="tictactoe-project-card">
+                <div class="HRV">
+                    <h3>Tic Tac Toe</h3>
+                    <p>Play in-browser</p>
+                    <div class="ttt-container">
+                        <div class="ttt-controls">
+                            <label for="ttt-difficulty">Difficulty:</label>
+                            <select id="ttt-difficulty" class="ttt-difficulty" aria-label="Select difficulty">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard" selected>Hard</option>
+                            </select>
+                        </div>
+                        <div class="ttt-status" aria-live="polite">Player X's turn</div>
+                        <div class="ttt-board" role="grid" aria-label="Tic Tac Toe Board">
+                            <button class="ttt-cell" data-index="0" role="gridcell" aria-label="Cell 1"></button>
+                            <button class="ttt-cell" data-index="1" role="gridcell" aria-label="Cell 2"></button>
+                            <button class="ttt-cell" data-index="2" role="gridcell" aria-label="Cell 3"></button>
+                            <button class="ttt-cell" data-index="3" role="gridcell" aria-label="Cell 4"></button>
+                            <button class="ttt-cell" data-index="4" role="gridcell" aria-label="Cell 5"></button>
+                            <button class="ttt-cell" data-index="5" role="gridcell" aria-label="Cell 6"></button>
+                            <button class="ttt-cell" data-index="6" role="gridcell" aria-label="Cell 7"></button>
+                            <button class="ttt-cell" data-index="7" role="gridcell" aria-label="Cell 8"></button>
+                            <button class="ttt-cell" data-index="8" role="gridcell" aria-label="Cell 9"></button>
+                        </div>
+                        <button class="ttt-reset" type="button">Reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mines-project-card">
+                <div class="HRV">
+                    <h3>Mines</h3>
+                    <p>Play in-browser</p>
+                    <div class="mines-container">
+                        <div class="mines-controls">
+                            <label for="mines-count">Mines:</label>
+                            <select id="mines-count" class="mines-count" aria-label="Select number of mines">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                            </select>
+                            <button type="button" class="mines-start">Start</button>
+                            <button type="button" class="mines-stop" disabled>Stop</button>
+                        </div>
+                        <div class="mines-meta">
+                            <span class="mines-status" aria-live="polite">Choose mines and press Start</span>
+                            <span class="mines-score" aria-label="Current score">Score: 0</span>
+                        </div>
+                        <div class="mines-board" role="grid" aria-label="Mines 4 by 4 Board"></div>
+                        <button type="button" class="mines-reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
