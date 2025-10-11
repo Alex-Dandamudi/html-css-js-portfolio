@@ -569,6 +569,19 @@ section{
     filter: invert(1) brightness(1.4) contrast(1.2);
 }
 
+/* Dark mode styles for GitHub icons in project sections */
+[data-theme="dark"] .project-git-icon,
+[data-theme="dark"] .mobile-git-icon {
+    filter: invert(1) brightness(1.2) contrast(1.1);
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+[data-theme="dark"] .project-git-icon:hover,
+[data-theme="dark"] .mobile-git-icon:hover {
+    filter: invert(1) brightness(1.4) contrast(1.2);
+    transform: scale(1.25);
+}
+
 /* buttuns */
 
 .btn-container{
@@ -798,6 +811,7 @@ section{
     align-self: center;
     align-items: center;
     font-size: 2rem;
+    padding-bottom: 5vh;
 }
 
 #projects{
@@ -817,41 +831,426 @@ section{
 .project-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 10rem;
     padding: 3rem;
     align-items: start;
     justify-items: center;
     position: relative;
     isolation: isolate;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    row-gap: 3rem;
+    row-gap: 4rem;
 }
 
-/* RESPONSIVE PROJECT GRID */
-@media (max-width: 768px) {
+/* PROJECT TILES - ALWAYS SHOW ALL INFO */
+.project-tile {
+    border: var(--project-border);
+    border-radius: 15px;
+    width: 100%;
+    height: 75%;
+    max-width: 450px;
+    background: var(--project-bg);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.project-tile:hover {
+    background: var(--bg-card-hover);
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow-medium);
+}
+
+.project-tile h3 {
+    font-size: 1.5rem;
+    background: var(--gradient-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.project-tile p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* PROJECT DETAILS - ALWAYS VISIBLE */
+.project-details {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: none;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: visible;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+    margin-top: 1rem;
+}
+
+.project-details h3 {
+    font-size: 1.5rem;
+    background: var(--gradient-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.project-details p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.project-points {
+    padding: 1rem 0;
+    font-weight: 500;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.project-points li {
+    text-align: left;
+    font-size: 0.85rem;
+    padding: 4px;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+    max-width: 100%;
+    color: var(--text-secondary);
+}
+
+.project-links {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.project-git-icon {
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 200%;
+    border-color: black;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+}
+
+.project-git-icon:hover {
+    transform: scale(1.25);
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+}
+
+/* MOBILE PROJECT CARDS - SHOW ALL INFO */
+.mobile-projects {
+    display: none;
+}
+
+.mobile-project-card {
+    border: var(--project-border);
+    border-radius: 15px;
+    background: var(--project-bg);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+    width: 100%;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mobile-project-card h3 {
+    font-size: 1.4rem;
+    background: var(--gradient-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.mobile-project-card .project-category {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.mobile-project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-project-points {
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-project-points li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+    list-style: none;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.mobile-project-points li::before {
+    content: "•";
+    color: var(--gradient-primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.mobile-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.mobile-tech-tile {
+    padding: 6px 12px;
+    background-color: var(--tech-tile-bg);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--gradient-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    border: var(--tech-tile-border);
+    white-space: nowrap;
+}
+
+.mobile-project-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.mobile-git-icon {
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
+}
+
+.mobile-git-icon:hover {
+    transform: scale(1.25);
+}
+
+/* RESPONSIVE BEHAVIOR */
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* Tablet/large mobile adjustments */
     .project-grid {
-        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2rem;
+        max-width: 900px;
+        row-gap: 3rem;
+    }
+    
+    .project-tile {
+        max-width: 400px;
+        padding: 2rem;
+    }
+    
+    .project-points {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide desktop project tiles on mobile */
+    .desktop-projects {
+        display: none !important;
+    }
+    
+    /* Show mobile project cards on mobile */
+    .mobile-projects {
+        display: block;
+        padding: 0.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    .mobile-project-card {
+        margin-bottom: 3rem;
         padding: 1rem;
-        gap: 1.5rem;
+        max-width: 90%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
     }
     
-    .hidden-content1, .hidden-content2, .hidden-content3, .hidden-content4 {
-        padding: 1.5rem;
+    .mobile-project-card h3 {
+        font-size: 1.2rem;
     }
     
-    .HRV-points li {
-        font-size: 0.85rem;
-        line-height: 1.5;
+    .mobile-project-card .project-category {
+        font-size: 0.8rem;
     }
     
-    .tech-stack {
-        gap: 6px;
+    .mobile-project-points li {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.6rem;
     }
     
-    .tech-tile {
+    .mobile-tech-stack {
+        display: flex;
+        gap: 10px;
+        margin: 0.8rem 0;
+    }
+    
+    .mobile-tech-tile {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .mobile-git-icon {
+        height: 1.8rem;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .mobile-projects {
+        padding: 0.3rem;
+    }
+    
+    .mobile-project-card {
+        max-width: 85%;
+        width: 85%;
+        padding: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .mobile-project-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-project-card .project-category {
+        font-size: 0.75rem;
+    }
+    
+    .mobile-project-points li {
+        font-size: 0.7rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    
+    .mobile-tech-stack {
+        display: flex;
+        gap: 10px;
+        margin: 0.6rem 0;
+    }
+    
+    .mobile-tech-tile {
         font-size: 12px;
-        padding: 4px 8px;
+        padding: 4px 6px;
+    }
+    
+    .mobile-git-icon {
+        height: 1.6rem;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+    .mobile-projects {
+        padding: 0.2rem;
+    }
+    
+    .mobile-project-card {
+        max-width: 80%;
+        width: 80%;
+        padding: 0.6rem;
+        margin-bottom: 2rem;
+    }
+    
+    .mobile-project-card h3 {
+        font-size: 1rem;
+    }
+    
+    .mobile-project-card .project-category {
+        font-size: 0.7rem;
+    }
+    
+    .mobile-project-points li {
+        font-size: 0.65rem;
+        line-height: 1.2;
+        margin-bottom: 0.4rem;
+    }
+    
+    .mobile-tech-stack {
+        display: flex;
+        gap: 10px;
+        margin: 0.5rem 0;
+    }
+    
+    .mobile-tech-tile {
+        font-size: 8px;
+        padding: 2px 3px;
+    }
+    
+    .mobile-git-icon {
+        height: 1.4rem;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Hide mobile project cards on desktop */
+    .mobile-projects {
+        display: none !important;
+    }
+    
+    /* Show desktop project tiles on desktop */
+    .desktop-projects {
+        display: grid;
     }
 }
 
@@ -862,181 +1261,7 @@ h2{
 .nav-links{
     text-shadow: -6px 5px 6px rgba(0, 0, 0, 0.189);
 }
-.hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
-    transition: all 0.6s ease;
-    text-align: center;
-    cursor: pointer;
-}
 
-.hidden-content1,.hidden-content2,.hidden-content3,.hidden-content4{
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: var(--bg-card-hover);
-    border-radius: 30px;
-    box-shadow: 0 5px 15px var(--shadow-light);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.3) translateY(50px);
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 1500;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-    will-change: transform, opacity, visibility;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-origin: center center;
-    min-height: 500px;
-    max-height: 650px;
-    overflow: visible;
-}
-
-.hidden-content3,.hidden-content4{
-    display: flex;
-    height: auto;
-    min-height: unset;
-    max-height: unset;
-    overflow: visible;
-}
-.hidden-content1,.hidden-content2{
-    display: flex;
-    height: auto;
-    min-height: unset;
-    max-height: unset;
-    overflow: visible;
-}
-
-.hrv-project-card:hover,.pothole-project-card:hover,.web-project-card:hover,.intrusion-project-card:hover{
-    transform: scale(1.02);
-    background: var(--bg-card-hover);
-    box-shadow: -15px 15px 20px var(--shadow-medium);
-    z-index: 2000;
-    position: relative;
-    border-radius: 30px;
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.hrv-project-card:hover .hidden-content1{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.05) translateY(0);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.pothole-project-card:hover .hidden-content2{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.05) translateY(0);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.hidden-content1,.hidden-content2{
-    display: flex;
-    height: 10vh;
-}
-
-
-.web-project-card:hover .hidden-content3,
-.intrusion-project-card:hover .hidden-content4 {
-    position: absolute;
-    left: 0%;
-    top: -50%;
-    bottom: auto;
-    transform: translateX(0%) scale(1.05);
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin: 0;
-    z-index: 9999;
-    opacity: 1;
-    visibility: visible;
-    overflow: visible;
-    border-radius: 30px;
-    background: var(--bg-card-hover);
-    box-shadow: 0 20px 40px var(--shadow-medium), 0 0 0 1px var(--glass-border);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem 1.5rem;
-}
-.hrv-project-card:hover .hidden-content1,
-.pothole-project-card:hover .hidden-content2{
-    position: absolute;
-    left: 0%;
-    top: -20%;
-    bottom: auto;
-    transform: translateX(0%) scale(1.05);
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin: 0;
-    z-index: 9999;
-    opacity: 1;
-    visibility: visible;
-    overflow: visible;
-    border-radius: 30px;
-    background: var(--bg-card-hover);
-    box-shadow: 0 20px 40px var(--shadow-medium), 0 0 0 1px var(--glass-border);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem 1.5rem;
-}
-
-.HRV{
-    padding: 3vh;
-    width: 100%;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    z-index: 1001;
-    text-align: center;
-}
-.HRV li{
-    text-align: center;
-    font-size: 0.85rem;
-    padding: 4px;
-    transition: transform .3s ease;
-    margin-bottom: 0.5rem;
-    word-wrap: break-word;
-    max-width: 100%;
-}
-
-.hrv-project-card,.pothole-project-card,.web-project-card,.intrusion-project-card{
-    border: var(--project-border);
-    border-radius: 30px;
-    width: 100%;
-    max-width: 400px;
-    min-height: 200px;
-    background: var(--project-bg);
-    z-index: 1000;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    position: relative;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    transform-origin: center;
-    overflow: visible;
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    animation: cardEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
 
 /* Tic Tac Toe card matches other cards */
 .tictactoe-project-card{
@@ -1065,25 +1290,33 @@ h2{
 
 .tictactoe-project-card:hover{
     transform: scale(1.02);
-    background: var(--bg-card-hover);
+    background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
     box-shadow: -15px 15px 20px var(--shadow-medium);
     z-index: 2000;
     border-radius: 30px;
 }
 
 /* Tic Tac Toe UI */
+.HRV{
+    text-align: center;
+    width: 100%;
+}
 .ttt-container{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
+    text-align: center;
 }
 
 .ttt-controls{
     display: flex;
     gap: 8px;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .ttt-difficulty{
@@ -1128,7 +1361,8 @@ h2{
 
 .ttt-cell:hover{
     transform: scale(1.03);
-    background: var(--bg-card);
+    background: var(--glass-bg);
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
 }
 
 .ttt-cell:disabled{
@@ -1152,157 +1386,23 @@ h2{
 
 .ttt-reset:hover{
     transform: scale(1.04);
-    background: var(--button-hover-bg);
-    color: var(--button-hover-color);
+    background: linear-gradient(145deg, #444, #333);
+    color: #00ff00;
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
 }
 
-@keyframes cardEntrance {
-    0% {
-        opacity: 0;
-        transform: scale(0.8) translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-.HRV h3{
-    font-size: 1.5rem;
-    background: var(--gradient-secondary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    z-index: 1000;
-    margin-bottom: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.HRV p{
-    font-size: 0.8rem;
-    padding: .3rem;
-    font-weight: 500;
-    margin-bottom: 0;
-    text-align: center;
-}
-.HRV-points{
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-weight: 500;
-    line-height: 1.5;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* ANIMATE CONTENT INSIDE HIDDEN SECTIONS */
-.hidden-content1 .HRV-points,
-.hidden-content2 .HRV-points,
-.hidden-content3 .HRV-points,
-.hidden-content4 .HRV-points {
-    opacity: 0;
-    transform: scale(0.8) translateY(20px);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
-    width: 100%;
-    max-width: 320px;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-}
-
-.hrv-project-card:hover .HRV-points,
-.pothole-project-card:hover .HRV-points,
-.web-project-card:hover .HRV-points,
-.intrusion-project-card:hover .HRV-points {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-}
-
-.hidden-content1 .tech-stack,
-.hidden-content2 .tech-stack,
-.hidden-content3 .tech-stack,
-.hidden-content4 .tech-stack {
-    opacity: 0;
-    transform: scale(0.8) translateY(20px);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s;
-    width: 100%;
-    max-width: 320px;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    flex-shrink: 0;
-}
-
-.hrv-project-card:hover .tech-stack,
-.pothole-project-card:hover .tech-stack,
-.web-project-card:hover .tech-stack,
-.intrusion-project-card:hover .tech-stack {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-}
-
-.hidden-content1 .HRV-links,
-.hidden-content2 .HRV-links,
-.hidden-content3 .HRV-links,
-.hidden-content4 .HRV-links {
-    opacity: 0;
-    transform: scale(0.8) translateY(20px);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s;
-    width: 100%;
-    text-align: center;
-    margin-top: 0;
-    flex-shrink: 0;
-}
-
-.hrv-project-card:hover .HRV-links,
-.pothole-project-card:hover .HRV-links,
-.web-project-card:hover .HRV-links,
-.intrusion-project-card:hover .HRV-links {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-}
-
-.HRV-links{
-    padding-top: 15px;
-    padding-bottom: 10px;
-}
-
-.HRVtech{
-    padding: 10px;
-}
-
-.HRVtech li{
-    list-style: none;
-    border: 1px solid white;
-}
-
-.HRV-git-icon{
-    cursor: pointer;
-    height: 2rem;
-    border-radius: 200%;
-    border-color: black;
-    display: inline-block;
-    transition: transform 0.2s ease;
-    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
-
-}
-.HRV-git-icon:hover{
-    transform: scale(1.25); /* Slight bulge */
-    box-shadow: -7px 5px 7px rgba(0, 0, 0, 0.189);
-}
 
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
     justify-content: center;
     margin-top: 12px;
     margin-bottom: 8px;
     padding: 0 8px;
+    opacity: 1;
+    transform: none;
+    transition: none;
 }
   
 .tech-tile {
@@ -1425,50 +1525,7 @@ h2{
     padding-right: 1vh;
 }
 
-@media (max-width: 768px) {
-  .hrv-project-card:hover .hidden-content1,
-  .pothole-project-card:hover .hidden-content2,
-  .web-project-card:hover .hidden-content3,
-  .intrusion-project-card:hover .hidden-content4 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: unset;
-    width: 100%;
-    max-width: 100%;
-    max-height: none;
-    min-height: unset;
-    overflow: visible;
-    padding: 1rem;
-    transform: scale(1.01);
-    z-index: 9999;
-    opacity: 1;
-    visibility: visible;
-    border-radius: 30px;
-    background: var(--bg-card-hover);
-    box-shadow: 0 10px 20px var(--shadow-light), 0 0 0 1px var(--glass-border);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-}
 
-.hrv-project-card{
-    background-image: url("./assets/low-heart-rate-variability-symptoms-jpg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Keep image visible on hover with a subtle overlay */
-.hrv-project-card:hover{
-    background: linear-gradient(135deg, rgba(253,251,251,0.85), rgba(235,237,238,0.85)), url("./assets/low-heart-rate-variability-symptoms-jpg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 /* Mines game card styles */
 .mines-project-card{
@@ -1497,7 +1554,7 @@ h2{
 
 .mines-project-card:hover{
     transform: scale(1.02);
-    background: var(--bg-card-hover);
+    background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
     box-shadow: -15px 15px 20px var(--shadow-medium);
     z-index: 2000;
     border-radius: 30px;
@@ -1508,7 +1565,9 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
+    text-align: center;
 }
 
 .mines-controls{
@@ -1517,6 +1576,7 @@ h2{
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 .mines-count{
@@ -1542,8 +1602,9 @@ h2{
 
 .mines-start:hover, .mines-stop:hover, .mines-reset:hover{
     transform: scale(1.04);
-    background: var(--button-hover-bg);
-    color: var(--button-hover-color);
+    background: linear-gradient(145deg, #444, #333);
+    color: #00ff00;
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
 }
 
 .mines-stop:disabled{
@@ -1557,6 +1618,8 @@ h2{
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    width: 100%;
+    text-align: center;
 }
 
 .mines-board{
@@ -1586,12 +1649,14 @@ h2{
 
 .mines-cell:hover{
     transform: scale(1.03);
-    background: var(--bg-card);
+    background: var(--glass-bg);
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
 }
 
 .mines-cell.revealed{
     cursor: default;
-    background: rgba(255,255,255,0.9);
+    background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+    border-color: #333;
 }
 
 .mines-cell.mine{
@@ -1649,8 +1714,10 @@ h2{
 }
 
 .surprise-button {
+    text-align: center;
+    align-items: center;
     position: relative;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 1.5rem;
     border: var(--button-border);
     border-radius: 50px;
     background: var(--button-bg);
@@ -1805,7 +1872,7 @@ h2{
     transform: translateY(-5px);
     box-shadow: 
         0 15px 30px rgba(0, 0, 0, 0.5),
-        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+        inset 0 1px 2px rgba(0, 255, 0, 0.15);
     border-color: #666;
 }
 
@@ -1840,8 +1907,10 @@ h2{
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .ttt-controls label,
@@ -1923,10 +1992,12 @@ h2{
 
 .mines-meta {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
     gap: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
 /* Console-style Game Boards */

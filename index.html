@@ -153,111 +153,191 @@
     </section>
     <section id="projects">
         <h5 class="projects-title">Projects</h5>
-            <div class="project-grid">
-                <div class="hrv-project-card">
-                        <div class="HRV">
-                            <h3>HRV Emotion Prediction</h3>
-                            <p>Machine Learning</p>
-                            <div class="hidden-content1">
-                            <h3>HRV Emotion Prediction</h3>
-                            <p>Machine Learning</p>
-                            <div class="HRV-points">
-                            <li>Built a machine learning solution to predict emotional states using HRV data from wearable devices.</li>
-                            <li>Implemented preprocessing, feature extraction, and model training pipelines, achieving 84% accuracy with AdaBoost.</li>
-                            <li>Conducted comparative analysis of classifiers (Random Forest, Decision Tree) to optimize performance.</li>
-                             </div>
-                             <div class="tech-stack">
-                                <span class="tech-tile">AdaBoost</span>
-                                <span class="tech-tile">Comparative Analysis</span>
-                                <span class="tech-tile">Random Forest</span>
-                                <span class="tech-tile">Decision Tree</span>
-                                <span class="tech-tile">Flask</span>
-                              </div>
-                             <div class="HRV-links">
-                                <img src="./assets/github.png" alt="My GitHub Profile" class="HRV-git-icon"onclick="location.href='https://github.com/Alex-Dandamudi'"/>
-                            </div>
-                        </div>
-                        </div>
+        
+        <!-- Desktop Project Tiles -->
+        <div class="project-grid desktop-projects">
+            <div class="project-tile" data-project="hrv">
+                <div class="project-details" id="hrv-details">
+                    <h3>HRV Emotion Prediction</h3>
+                    <p>Machine Learning</p>
+                    <div class="project-points">
+                        <li>Built a machine learning solution to predict emotional states using HRV data from wearable devices.</li>
+                        <li>Implemented preprocessing, feature extraction, and model training pipelines, achieving 84% accuracy with AdaBoost.</li>
+                        <li>Conducted comparative analysis of classifiers (Random Forest, Decision Tree) to optimize performance.</li>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tile">AdaBoost</span>
+                        <span class="tech-tile">Comparative Analysis</span>
+                        <span class="tech-tile">Random Forest</span>
+                        <span class="tech-tile">Decision Tree</span>
+                        <span class="tech-tile">Flask</span>
+                    </div>
+                    <div class="project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="project-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi'"/>
+                    </div>
                 </div>
-                <div class="pothole-project-card">
-                    <div class="HRV">
-                        <h3>Smart Road Pothole Detection</h3>
-                        <p>Machine Learning and Cloud Computing</p>
-                        <div class="hidden-content2">
-                        <h3>Smart Road Pothole Detection</h3>
-                        <p>Machine Learning and Cloud Computing</p>
-                        <div class="HRV-points">
+            </div>
+            <div class="project-tile" data-project="pothole">
+                <div class="project-details" id="pothole-details">
+                    <h3>Smart Road Pothole Detection</h3>
+                    <p>Machine Learning and Cloud Computing</p>
+                    <div class="project-points">
                         <li>Designed a cutting-edge pothole detection solution leveraging IoT cloud and mobile integration with Python;
                             delivered alerts within 5 seconds, improving response times and user engagement by 40%.</li>
                         <li>Designed a GPS-enabled camera robot for pothole detection, processing video feeds at 15 frames per second
                             with 80% precision, integrating IoT cloud capabilities.</li>
-                         </div>
-                         <div class="tech-stack">
-                            <span class="tech-tile">ESP32 CAM</span>
-                            <span class="tech-tile">Alerting and Reporting</span>
-                            <span class="tech-tile">CNN</span>
-                                <span class="tech-tile">Pothole Detection</span>
-                            <span class="tech-tile">Algorithm</span>
-                          </div>
-                         <div class="HRV-links">
-                            <img src="./assets/github.png" alt="My GitHub Profile" class="HRV-git-icon"onclick="location.href='https://github.com/Alex-Dandamudi/Pothole-Detection'"/>
-                        </div>
                     </div>
+                    <div class="tech-stack">
+                        <span class="tech-tile">ESP32 CAM</span>
+                        <span class="tech-tile">Alerting and Reporting</span>
+                        <span class="tech-tile">CNN</span>
+                        <span class="tech-tile">Pothole Detection</span>
+                        <span class="tech-tile">Algorithm</span>
+                    </div>
+                    <div class="project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="project-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi/Pothole-Detection'"/>
                     </div>
                 </div>
-                <div class="web-project-card">
-                    <div class="HRV">
-                        <h3>Citizen Journalism Platform</h3>
-                        <p>Web Development</p>
-                        <div class="hidden-content3">
-                        <h3>Citizen Journalism Platform</h3>
-                        <p>Web Development</p>
-                        <div class="HRV-points">
+            </div>
+            <div class="project-tile" data-project="web">
+                <div class="project-details" id="web-details">
+                    <h3>Citizen Journalism Platform</h3>
+                    <p>Web Development</p>
+                    <div class="project-points">
                         <li>Developed a user-driven platform for sharing verified news and perspectives.</li>
                         <li>Built a responsive interface with React.js and implemented real-time features using Socket.io and Node.js.</li>
                         <li>Secured user authentication with Passport.js and established a robust content verification system.</li>
-                         </div>
-                         <div class="tech-stack">
-                            <span class="tech-tile">React JS</span>
-                            <span class="tech-tile">Node JS</span>
-                            <span class="tech-tile">Mongo DB</span>
-                            <span class="tech-tile">Socket.io</span>
-                            <span class="tech-tile">Passport JS</span>
-                          </div>
-                         <div class="HRV-links">
-                            <img src="./assets/github.png" alt="My GitHub Profile" class="HRV-git-icon"onclick="location.href='https://github.com/Alex-Dandamudi'"/>
-                        </div>
                     </div>
+                    <div class="tech-stack">
+                        <span class="tech-tile">React JS</span>
+                        <span class="tech-tile">Node JS</span>
+                        <span class="tech-tile">Mongo DB</span>
+                        <span class="tech-tile">Socket.io</span>
+                        <span class="tech-tile">Passport JS</span>
+                    </div>
+                    <div class="project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="project-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi/Citizen-Journalism-Platform.git'"/>
                     </div>
                 </div>
-                <div class="intrusion-project-card">
-                    <div class="HRV">
-                        <h3>Intrusion Detection System</h3>
-                        <p>Machine Learning </p>
-                        <div class="hidden-content4">
-                        <h3>Intrusion Detection System</h3>
-                        <p>Machine Learning </p>
-                        <div class="HRV-points">
+            </div>
+            <div class="project-tile" data-project="intrusion">
+                <div class="project-details" id="intrusion-details">
+                    <h3>Intrusion Detection System</h3>
+                    <p>Machine Learning</p>
+                    <div class="project-points">
                         <li>Built a machine learning-based Intrusion Detection System using Random Forest, XGBoost, and Logistic
                             Regression with over 99% accuracy.</li>
                         <li>Cleaned and prepared large datasets (CICIDS2017, CICIDS2018) with techniques like label encoding and
                             feature scaling.</li>
                         <li>Tested and fine-tuned multiple models to improve detection accuracy and reduce false alerts.</li>
-                         </div>
-                         <div class="tech-stack">
-                            <span class="tech-tile">Python</span>
-                            <span class="tech-tile">scikit-learn</span>
-                            <span class="tech-tile">XGBoost</span>
-                            <span class="tech-tile">TensorFlow/Keras</span>
-                            <span class="tech-tile">Jupyter Notebooks</span>
-                          </div>
-                         <div class="HRV-links">
-                            <img src="./assets/github.png" alt="My GitHub Profile" class="HRV-git-icon"onclick="location.href='https://github.com/Alex-Dandamudi'"/>
-                        </div>
                     </div>
+                    <div class="tech-stack">
+                        <span class="tech-tile">Python</span>
+                        <span class="tech-tile">scikit-learn</span>
+                        <span class="tech-tile">XGBoost</span>
+                        <span class="tech-tile">TensorFlow/Keras</span>
+                        <span class="tech-tile">Jupyter Notebooks</span>
+                    </div>
+                    <div class="project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="project-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi'"/>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Project Cards -->
+        <div class="mobile-projects">
+            <div class="mobile-project-card">
+                <h3>HRV Emotion Prediction</h3>
+                <p class="project-category">Machine Learning</p>
+                <div class="mobile-project-content">
+                    <div class="mobile-project-points">
+                        <li>Built a machine learning solution to predict emotional states using HRV data from wearable devices.</li>
+                        <li>Implemented preprocessing, feature extraction, and model training pipelines, achieving 84% accuracy with AdaBoost.</li>
+                        <li>Conducted comparative analysis of classifiers (Random Forest, Decision Tree) to optimize performance.</li>
+                    </div>
+                    <div class="mobile-tech-stack">
+                        <span class="mobile-tech-tile">AdaBoost</span>
+                        <span class="mobile-tech-tile">Comparative Analysis</span>
+                        <span class="mobile-tech-tile">Random Forest</span>
+                        <span class="mobile-tech-tile">Decision Tree</span>
+                        <span class="mobile-tech-tile">Flask</span>
+                    </div>
+                    <div class="mobile-project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="mobile-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi'"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-project-card">
+                <h3>Smart Road Pothole Detection</h3>
+                <p class="project-category">Machine Learning and Cloud Computing</p>
+                <div class="mobile-project-content">
+                    <div class="mobile-project-points">
+                        <li>Designed a cutting-edge pothole detection solution leveraging IoT cloud and mobile integration with Python;
+                            delivered alerts within 5 seconds, improving response times and user engagement by 40%.</li>
+                        <li>Designed a GPS-enabled camera robot for pothole detection, processing video feeds at 15 frames per second
+                            with 80% precision, integrating IoT cloud capabilities.</li>
+                    </div>
+                    <div class="mobile-tech-stack">
+                        <span class="mobile-tech-tile">ESP32 CAM</span>
+                        <span class="mobile-tech-tile">Alerting and Reporting</span>
+                        <span class="mobile-tech-tile">CNN</span>
+                        <span class="mobile-tech-tile">Pothole Detection</span>
+                        <span class="mobile-tech-tile">Algorithm</span>
+                    </div>
+                    <div class="mobile-project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="mobile-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi/Pothole-Detection'"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-project-card">
+                <h3>Citizen Journalism Platform</h3>
+                <p class="project-category">Web Development</p>
+                <div class="mobile-project-content">
+                    <div class="mobile-project-points">
+                        <li>Developed a user-driven platform for sharing verified news and perspectives.</li>
+                        <li>Built a responsive interface with React.js and implemented real-time features using Socket.io and Node.js.</li>
+                        <li>Secured user authentication with Passport.js and established a robust content verification system.</li>
+                    </div>
+                    <div class="mobile-tech-stack">
+                        <span class="mobile-tech-tile">React JS</span>
+                        <span class="mobile-tech-tile">Node JS</span>
+                        <span class="mobile-tech-tile">Mongo DB</span>
+                        <span class="mobile-tech-tile">Socket.io</span>
+                        <span class="mobile-tech-tile">Passport JS</span>
+                    </div>
+                    <div class="mobile-project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="mobile-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi/Citizen-Journalism-Platform.git'"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-project-card">
+                <h3>Intrusion Detection System</h3>
+                <p class="project-category">Machine Learning</p>
+                <div class="mobile-project-content">
+                    <div class="mobile-project-points">
+                        <li>Built a machine learning-based Intrusion Detection System using Random Forest, XGBoost, and Logistic
+                            Regression with over 99% accuracy.</li>
+                        <li>Cleaned and prepared large datasets (CICIDS2017, CICIDS2018) with techniques like label encoding and
+                            feature scaling.</li>
+                        <li>Tested and fine-tuned multiple models to improve detection accuracy and reduce false alerts.</li>
+                    </div>
+                    <div class="mobile-tech-stack">
+                        <span class="mobile-tech-tile">Python</span>
+                        <span class="mobile-tech-tile">scikit-learn</span>
+                        <span class="mobile-tech-tile">XGBoost</span>
+                        <span class="mobile-tech-tile">TensorFlow/Keras</span>
+                        <span class="mobile-tech-tile">Jupyter Notebooks</span>
+                    </div>
+                    <div class="mobile-project-links">
+                        <img src="./assets/github.png" alt="My GitHub Profile" class="mobile-git-icon" onclick="location.href='https://github.com/Alex-Dandamudi'"/>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <!-- Games Section -->
